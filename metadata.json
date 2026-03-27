@@ -1,5 +1,5 @@
 {
-  "name": "Academic Science MCP",
-  "description": "A specialized MCP server for Claude that retrieves and formats complex scientific data, LaTeX formulas, and academic paper summaries.",
+  "name": "Science Research MCP",
+  "description": "High-Impact Academic & Science Research MCP Server for STEM Students and Researchers.",
   "requestFramePermissions": []
 }

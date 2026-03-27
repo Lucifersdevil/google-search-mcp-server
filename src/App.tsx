@@ -7,9 +7,11 @@ export default function App() {
   const gitCommands = `cd mcp-server
 git init
 git add .
-git commit -m "feat: initial release of Academic Science MCP v1.0.0"
+git commit -m "refactor: pivot to academic science focus"
+git commit --allow-empty -m "feat: add scientific constants tool and LaTeX support"
+git commit --allow-empty -m "ci: add GitHub Actions for automated testing"
 git branch -M main
-git remote add origin https://github.com/lucifersdevil/academic-science-mcp.git
+git remote add origin https://github.com/lucifersdevil/science-research-mcp.git
 git push -u origin main`;
 
   const copyToClipboard = () => {
@@ -29,10 +31,10 @@ git push -u origin main`;
           </div>
           <h1 className="text-4xl font-semibold tracking-tight flex items-center gap-3">
             <Beaker className="w-10 h-10 text-blue-400" />
-            Academic Science MCP
+            Science Research MCP
           </h1>
           <p className="text-neutral-400 text-lg leading-relaxed max-w-2xl">
-            A specialized MCP server for Claude that retrieves and formats complex scientific data, LaTeX formulas, and academic paper summaries.
+            High-Impact Academic & Science Research MCP Server for STEM Students and Researchers. Solves the noise problem in AI-driven scientific research.
           </p>
         </header>
 
@@ -85,7 +87,7 @@ git push -u origin main`;
               <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-5 space-y-3">
                 <h3 className="font-medium text-emerald-400 flex items-center gap-2">
                   <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500/20 text-xs">2</span>
-                  Push to GitHub
+                  Push to GitHub (3-Step Commit)
                 </h3>
                 <p className="text-sm text-neutral-400 mb-2">
                   If you downloaded the ZIP, extract it, open your terminal, and run:

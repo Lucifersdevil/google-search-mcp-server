@@ -1,24 +1,41 @@
-# Academic Science MCP
+# Science Research MCP
 
-A specialized Model Context Protocol (MCP) server for Claude that retrieves and formats complex scientific data, LaTeX formulas, and academic paper summaries.
+A High-Impact Academic & Science Research MCP Server designed to solve the noise problem in AI-driven scientific research. 
 
-## Why This Exists
+**Target Audience:** STEM Students, JEE Aspirants, and Academic Researchers.
 
-Generic search tools often struggle with the nuances of academic research. They may strip out crucial LaTeX formatting, lose the structure of scientific papers, or fail to provide quick access to fundamental constants. 
+## Solving the Noise Problem
 
-**Academic Science MCP** bridges this gap for science students, researchers, and academics by:
-1. **Preserving Math**: Ensuring LaTeX equations (like $E=mc^2$ or $\\hat{H} |\\Psi\\rangle = E |\\Psi\\rangle$) are correctly formatted for Claude to render.
-2. **Structured Data**: Returning academic papers as structured JSON (Title, Authors, Abstract, URL) rather than a wall of text.
-3. **Local Caching**: Providing instant access to fundamental Physics and Chemistry constants via MCP Resources.
+When AI assistants perform generic web searches for scientific topics, the results are often polluted with pop-science articles, SEO spam, and oversimplified explanations. 
+
+**Science Research MCP** acts as a foundational piece of educational infrastructure by:
+1. **Enforcing Academic Rigor**: Automatically appending strict academic filters (`site:arxiv.org OR site:edu OR site:researchgate.net`) to all search queries.
+2. **Structured Data Delivery**: Returning academic papers as structured JSON (Title, Authors, Abstract, URL) rather than unstructured text walls.
+3. **Instant Constants**: Providing a dedicated tool for retrieving fundamental Physics and Chemistry constants (Planck's, Gas constant, etc.) instantly.
+
+## Mathematical Formatting
+
+Generic search tools often strip out crucial LaTeX formatting, making complex equations unreadable. This MCP server explicitly preserves and formats mathematical expressions using standard LaTeX delimiters so Claude can render them perfectly.
+
+**Example Output:**
+```json
+{
+  "symbol": "G",
+  "latex": "$G$",
+  "value": 6.6743e-11,
+  "unit": "m^3/(kg\\cdot s^2)"
+}
+```
+*Claude renders this as: $G = 6.6743 \times 10^{-11} \text{ m}^3/(\text{kg}\cdot\text{s}^2)$*
 
 ## System Architecture
 
 ```mermaid
 graph TD
-    A[Claude / MCP Client] <-->|stdio transport| B(Academic Science MCP Server)
-    B -->|Tool: search_arxiv| C{ArXiv API}
-    B -->|Resource: science://constants/*| D[(Local Constants Cache)]
-    C -->|XML Response| E[XML to JSON Parser]
+    A[Claude / MCP Client] <-->|stdio transport| B(Science Research MCP Server)
+    B -->|Tool: search_academic_sources| C{Academic APIs / Search}
+    B -->|Tool: get_scientific_constants| D[(Local Constants Data)]
+    C -->|Raw Data| E[Filter & Structure Parser]
     E -->|Structured Data + LaTeX| B
 ```
 
@@ -38,9 +55,9 @@ Add the following to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "academic-science": {
+    "science-research": {
       "command": "node",
-      "args": ["/absolute/path/to/academic-science-mcp/dist/index.js"]
+      "args": ["/absolute/path/to/science-research-mcp/dist/index.js"]
     }
   }
 }
@@ -49,10 +66,14 @@ Add the following to your `claude_desktop_config.json`:
 ### Available Features
 
 - **Tools**: 
-  - `search_arxiv`: Searches the ArXiv database for academic papers.
-- **Resources**: 
-  - `science://constants/physics`: Fundamental physics constants.
-  - `science://constants/chemistry`: Fundamental chemistry constants.
+  - `search_academic_sources`: Searches academic sources for scientific papers with automatic filtering.
+  - `get_scientific_constants`: Returns a structured JSON of Physics and Chemistry constants in LaTeX format.
+
+## Roadmap
+
+- [ ] **WolframAlpha API Integration**: Planned integration to allow Claude to compute complex integrals and differential equations.
+- [ ] **Crossref DOI Resolution**: Add a tool to fetch full citation metadata from a DOI.
+- [ ] **PubMed Integration**: Expand search capabilities to include medical and biological research databases.
 
 ## Development
 

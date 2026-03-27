@@ -1,7 +1,7 @@
 {
-  "name": "academic-science-mcp",
+  "name": "science-research-mcp",
   "version": "1.0.0",
-  "description": "Specialized MCP server for retrieving scientific data, LaTeX formulas, and academic papers.",
+  "description": "High-Impact Academic & Science Research MCP Server solving the noise problem in AI-driven scientific research.",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
