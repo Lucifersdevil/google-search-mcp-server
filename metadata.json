@@ -1,0 +1,5 @@
+{
+  "name": "MCP Google Search",
+  "description": "A production-ready Model Context Protocol (MCP) server for Google Search.",
+  "requestFramePermissions": []
+}
