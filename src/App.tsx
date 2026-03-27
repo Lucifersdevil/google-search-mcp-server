@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, Copy, Terminal, FolderGit2, FileCode2, Github, Download } from 'lucide-react';
+import { CheckCircle, Copy, Terminal, FolderGit2, FileCode2, Github, Download, Beaker } from 'lucide-react';
 
 export default function App() {
   const [copied, setCopied] = useState(false);
@@ -7,9 +7,9 @@ export default function App() {
   const gitCommands = `cd mcp-server
 git init
 git add .
-git commit -m "feat: initial implementation of MCP server"
+git commit -m "feat: initial release of Academic Science MCP v1.0.0"
 git branch -M main
-git remote add origin https://github.com/lucifersdevil/mcp-google-search.git
+git remote add origin https://github.com/lucifersdevil/academic-science-mcp.git
 git push -u origin main`;
 
   const copyToClipboard = () => {
@@ -27,10 +27,12 @@ git push -u origin main`;
             <CheckCircle className="w-4 h-4" />
             Project Generation Complete
           </div>
-          <h1 className="text-4xl font-semibold tracking-tight">MCP Google Search</h1>
+          <h1 className="text-4xl font-semibold tracking-tight flex items-center gap-3">
+            <Beaker className="w-10 h-10 text-blue-400" />
+            Academic Science MCP
+          </h1>
           <p className="text-neutral-400 text-lg leading-relaxed max-w-2xl">
-            Your production-ready Model Context Protocol (MCP) server has been generated. 
-            It includes full TypeScript support, Vitest testing, GitHub Actions CI, and Open Source community standards.
+            A specialized MCP server for Claude that retrieves and formats complex scientific data, LaTeX formulas, and academic paper summaries.
           </p>
         </header>
 
@@ -46,10 +48,13 @@ git push -u origin main`;
                 <li className="flex items-center gap-2 ml-4"><FolderGit2 className="w-4 h-4 text-blue-400"/> .github/workflows/</li>
                 <li className="flex items-center gap-2 ml-8"><FileCode2 className="w-4 h-4 text-neutral-500"/> ci.yml</li>
                 <li className="flex items-center gap-2 ml-4"><FolderGit2 className="w-4 h-4 text-blue-400"/> src/</li>
-                <li className="flex items-center gap-2 ml-8"><FolderGit2 className="w-4 h-4 text-blue-400"/> __tests__/</li>
-                <li className="flex items-center gap-2 ml-12"><FileCode2 className="w-4 h-4 text-neutral-500"/> index.test.ts</li>
+                <li className="flex items-center gap-2 ml-8"><FileCode2 className="w-4 h-4 text-neutral-500"/> constants.ts</li>
                 <li className="flex items-center gap-2 ml-8"><FileCode2 className="w-4 h-4 text-neutral-500"/> index.ts</li>
+                <li className="flex items-center gap-2 ml-4"><FolderGit2 className="w-4 h-4 text-blue-400"/> tests/</li>
+                <li className="flex items-center gap-2 ml-8"><FileCode2 className="w-4 h-4 text-neutral-500"/> index.test.ts</li>
+                <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> .eslintrc.json</li>
                 <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> .gitignore</li>
+                <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> .prettierrc</li>
                 <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> CODE_OF_CONDUCT.md</li>
                 <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> CONTRIBUTING.md</li>
                 <li className="flex items-center gap-2 ml-4"><FileCode2 className="w-4 h-4 text-neutral-500"/> LICENSE</li>

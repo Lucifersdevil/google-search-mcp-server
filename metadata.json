@@ -1,5 +1,5 @@
 {
-  "name": "MCP Google Search",
-  "description": "A production-ready Model Context Protocol (MCP) server for Google Search.",
+  "name": "Academic Science MCP",
+  "description": "A specialized MCP server for Claude that retrieves and formats complex scientific data, LaTeX formulas, and academic paper summaries.",
   "requestFramePermissions": []
 }

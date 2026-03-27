@@ -1,21 +1,29 @@
 {
-  "name": "mcp-google-search",
+  "name": "academic-science-mcp",
   "version": "1.0.0",
-  "description": "MCP server for Google Search",
+  "description": "Specialized MCP server for retrieving scientific data, LaTeX formulas, and academic papers.",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "vitest run",
-    "lint": "eslint src/"
+    "lint": "eslint src/ tests/",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.1"
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "axios": "^1.6.7",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
     "vitest": "^1.2.2",
-    "@types/node": "^20.11.10"
+    "@types/node": "^20.11.10",
+    "@types/xml2js": "^0.4.14",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "prettier": "^3.2.5"
   }
 }
